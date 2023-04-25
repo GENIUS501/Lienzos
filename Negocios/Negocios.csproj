@@ -48,6 +48,7 @@
     <Compile Include="NRoles.cs" />
     <Compile Include="NTipo_Producto.cs" />
     <Compile Include="NUsuarios.cs" />
+    <Compile Include="NVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
