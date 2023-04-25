@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e46ed4e029a2460ea78d0486f472e461" Name="Diagram1">
+        <EntityTypeShape EntityType="LienzosModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Bitacora_Movimientos" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Bitacora_Sesiones" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Clientes" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Permisos" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Productos" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Roles" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Tipo_Productos" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Usuarios" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Venta" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Venta_detallada" Width="1.5" PointX="10.5" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="LienzosModel.Fk_MOVIMIENTOS_USUARIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="LienzosModel.Fk_SESIONES_USUARIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="LienzosModel.Fk_VENTAS_CLIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="LienzosModel.Fk_PERMISOS_ROLES" ManuallyRouted="false" />
+        <AssociationConnector Association="LienzosModel.Fk_DETALLE_PRODUCTOS" ManuallyRouted="false" />
+        <AssociationConnector Association="LienzosModel.Fk_PRODUCTOS_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="LienzosModel.Fk_USUARIOS_ROLES" ManuallyRouted="false" />
+        <AssociationConnector Association="LienzosModel.Fk_VENTAS_USUARIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="LienzosModel.Fk_DETALLE_VENTAS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
