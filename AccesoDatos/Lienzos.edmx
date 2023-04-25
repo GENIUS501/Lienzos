@@ -29,10 +29,10 @@
             <PropertyRef Name="ID_Cliente" />
           </Key>
           <Property Name="ID_Cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Identificacion" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Primer_Apellido" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Segundo_Apellido" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="Nombre_Usuario" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Genero" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Tab_Permisos">
@@ -76,6 +76,7 @@
             <PropertyRef Name="ID_Usuario" />
           </Key>
           <Property Name="ID_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Identificacion" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Primer_Apellido" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Segundo_Apellido" Type="varchar" MaxLength="25" Nullable="false" />
@@ -292,10 +293,10 @@
             <PropertyRef Name="ID_Cliente" />
           </Key>
           <Property Name="ID_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Identificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Primer_Apellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Segundo_Apellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nombre_Usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Genero" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Tab_Venta" Relationship="Self.Fk_VENTAS_CLIENTES" FromRole="Tab_Clientes" ToRole="Tab_Venta" />
         </EntityType>
@@ -346,6 +347,7 @@
             <PropertyRef Name="ID_Usuario" />
           </Key>
           <Property Name="ID_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Identificacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Primer_Apellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Segundo_Apellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
@@ -571,10 +573,10 @@
             <EntityTypeMapping TypeName="LienzosModel.Tab_Clientes">
               <MappingFragment StoreEntitySet="Tab_Clientes">
                 <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Primer_Apellido" ColumnName="Primer_Apellido" />
                 <ScalarProperty Name="Segundo_Apellido" ColumnName="Segundo_Apellido" />
-                <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
                 <ScalarProperty Name="Genero" ColumnName="Genero" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -623,6 +625,7 @@
             <EntityTypeMapping TypeName="LienzosModel.Tab_Usuarios">
               <MappingFragment StoreEntitySet="Tab_Usuarios">
                 <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Primer_Apellido" ColumnName="Primer_Apellido" />
                 <ScalarProperty Name="Segundo_Apellido" ColumnName="Segundo_Apellido" />

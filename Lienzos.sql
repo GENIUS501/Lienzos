@@ -16,6 +16,7 @@ CREATE TABLE Tab_Permisos(
 );
 CREATE TABLE Tab_Usuarios(
 	ID_Usuario INT IDENTITY (1,1) PRIMARY KEY NOT NULL,
+	Identificacion VARCHAR(25) NOT NULL UNIQUE,
 	Nombre VARCHAR(25) NOT NULL,
 	Primer_Apellido VARCHAR(25) NOT NULL,
 	Segundo_Apellido VARCHAR(25) NOT NULL,
@@ -28,10 +29,10 @@ CREATE TABLE Tab_Usuarios(
 );
 CREATE TABLE Tab_Clientes(
 	ID_Cliente INT IDENTITY (1,1) PRIMARY KEY NOT NULL,
+	Identificacion VARCHAR(25) NOT NULL UNIQUE,
 	Nombre VARCHAR(25) NOT NULL,
 	Primer_Apellido VARCHAR(25) NOT NULL,
 	Segundo_Apellido VARCHAR(25) NOT NULL,
-	Nombre_Usuario VARCHAR(25) NOT NULL,
 	Genero INT NOT NULL
 );
 CREATE TABLE Tab_Tipo_Productos(

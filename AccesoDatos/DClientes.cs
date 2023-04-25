@@ -9,35 +9,33 @@ using System.Transactions;
 
 namespace AccesoDatos
 {
-    public class DUsuarios
+    public class DClientes
     {
         LienzosEntities db = new LienzosEntities();
         EBitacora_Movimientos Entidad_Movimientos = new EBitacora_Movimientos();
         DBitacora_movimientos Movimientos = new DBitacora_movimientos();
         #region Agregar
-        public int Agregar(EUsuario obj, int Id_Usuario)
+        public int Agregar(EClientes obj, int Id_Usuario)
         {
             try
             {
                 using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
-                    Tab_Usuarios Objbd = new Tab_Usuarios();
+                    Tab_Clientes Objbd = new Tab_Clientes();
                     Objbd.Identificacion = obj.Identificacion;
                     Objbd.Nombre = obj.Nombre;
-                    Objbd.Nombre_Usuario = obj.Nombre_Usuario;
                     Objbd.Primer_Apellido = obj.Primer_Apellido;
                     Objbd.Segundo_Apellido = obj.Segundo_Apellido;
                     Objbd.Genero = obj.Genero;
-                    Objbd.Id_Rol = obj.Id_Rol;
-                    Objbd.Estado = 1;
-                    Objbd.Contrasena = obj.Contrasena;
-                    db.Entry(Objbd).State = EntityState.Added;
+                    db.Tab_Clientes.Add(Objbd);
+
                     int Resultado = db.SaveChanges();
+
                     if (Resultado > 0)
                     {
                         Ts.Complete();
                         Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                        Entidad_Movimientos.modulo = "Usuarios";
+                        Entidad_Movimientos.modulo = "Clientes";
                         Entidad_Movimientos.tipo_movimiento = "Agregar";
                         Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
                         Movimientos.Agregar(Entidad_Movimientos);
@@ -57,38 +55,52 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region Mostrar
+        public List<EClientes> Mostrar()
+        {
+            try
+            {
+                List<EClientes> Lista = new List<EClientes>();
+                Lista = db.Tab_Clientes
+                .Select(x => new EClientes
+                {
+                    Identificacion = x.Identificacion,
+                    Nombre = x.Nombre,
+                    Primer_Apellido = x.Primer_Apellido,
+                    Segundo_Apellido = x.Segundo_Apellido,
+                    Genero = x.Genero,
+                    ID_Cliente = x.ID_Cliente
+                }).ToList();
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        #endregion
+
         #region Modificar
-        public int Modificar(EUsuario obj, int Id_Usuario)
+        public int Modificar(EClientes obj, int Id_Usuario)
         {
             try
             {
                 using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
-                    var Objbd = db.Tab_Usuarios.Where(x => x.ID_Usuario == obj.ID_Usuario).FirstOrDefault();
-                    Objbd.ID_Usuario = obj.ID_Usuario;
+                    var Objbd = db.Tab_Clientes.Where(x => x.ID_Cliente == obj.ID_Cliente).FirstOrDefault();
                     Objbd.Identificacion = obj.Identificacion;
                     Objbd.Nombre = obj.Nombre;
-                    Objbd.Nombre_Usuario = obj.Nombre_Usuario;
                     Objbd.Primer_Apellido = obj.Primer_Apellido;
                     Objbd.Segundo_Apellido = obj.Segundo_Apellido;
                     Objbd.Genero = obj.Genero;
-                    Objbd.Id_Rol = obj.Id_Rol;
-                    Objbd.Estado = 1;
-                    if (obj.Contrasena == "********")
-                    {
-
-                    }
-                    else
-                    {
-                        Objbd.Contrasena = obj.Contrasena;
-                    }
                     db.Entry(Objbd).State = EntityState.Modified;
                     int Resultado = db.SaveChanges();
                     if (Resultado > 0)
                     {
                         Ts.Complete();
                         Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                        Entidad_Movimientos.modulo = "Usuarios";
+                        Entidad_Movimientos.modulo = "Clientes";
                         Entidad_Movimientos.tipo_movimiento = "Modificar";
                         Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
                         Movimientos.Agregar(Entidad_Movimientos);
@@ -112,14 +124,14 @@ namespace AccesoDatos
             {
                 using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
-                    var Objbd = db.Tab_Usuarios.Where(x => x.ID_Usuario == ID).FirstOrDefault();
+                    var Objbd = db.Tab_Clientes.Where(x => x.ID_Cliente == ID).FirstOrDefault();
                     db.Entry(Objbd).State = EntityState.Deleted;
                     int Resultado = db.SaveChanges();
                     if (Resultado > 0)
                     {
                         Ts.Complete();
                         Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                        Entidad_Movimientos.modulo = "Usuarios";
+                        Entidad_Movimientos.modulo = "Clientes";
                         Entidad_Movimientos.tipo_movimiento = "Eliminar";
                         Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
                         Movimientos.Agregar(Entidad_Movimientos);
@@ -128,66 +140,6 @@ namespace AccesoDatos
                     Ts.Dispose();
                     return Resultado;
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        #endregion
-
-
-        #region Mostrar varios
-        public List<EUsuario> Mostrar()
-        {
-            try
-            {
-                List<EUsuario> Lista = new List<EUsuario>();
-                Lista = db.Tab_Usuarios
-                .Select(x => new EUsuario
-                {
-                    ID_Usuario = x.ID_Usuario,
-                    Identificacion=x.Identificacion,
-                    Nombre = x.Nombre,
-                    Nombre_Usuario = x.Nombre_Usuario,
-                    Primer_Apellido = x.Primer_Apellido,
-                    Segundo_Apellido = x.Segundo_Apellido,
-                    Genero = x.Genero,
-                    Id_Rol = x.Id_Rol,
-                    Estado = x.Estado,
-                    Contrasena = x.Contrasena
-                }).ToList();
-                return Lista;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-        #endregion
-
-        #region Login
-        public EUsuario Login(string User, string Pass)
-        {
-            try
-            {
-                EUsuario Obj = new EUsuario();
-                Obj = db.Tab_Usuarios
-                .Select(x => new EUsuario
-                {
-                    ID_Usuario = x.ID_Usuario,
-                    Identificacion=x.Identificacion,
-                    Nombre = x.Nombre,
-                    Nombre_Usuario = x.Nombre_Usuario,
-                    Primer_Apellido = x.Primer_Apellido,
-                    Segundo_Apellido = x.Segundo_Apellido,
-                    Genero = x.Genero,
-                    Id_Rol = x.Id_Rol,
-                    Estado = x.Estado,
-                    Contrasena = x.Contrasena
-                }).Where(x => x.Nombre_Usuario == User && x.Contrasena == Pass).FirstOrDefault();
-                return Obj;
             }
             catch (Exception ex)
             {

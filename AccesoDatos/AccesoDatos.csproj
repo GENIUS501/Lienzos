@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="DBitacora_movimientos.cs" />
     <Compile Include="DBitacora_Sesiones.cs" />
+    <Compile Include="DClientes.cs" />
     <Compile Include="DPermisos.cs" />
     <Compile Include="DProductos.cs" />
     <Compile Include="DRoles.cs" />

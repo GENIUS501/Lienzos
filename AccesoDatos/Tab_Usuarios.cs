@@ -23,6 +23,7 @@ namespace AccesoDatos
         }
     
         public int ID_Usuario { get; set; }
+        public string Identificacion { get; set; }
         public string Nombre { get; set; }
         public string Primer_Apellido { get; set; }
         public string Segundo_Apellido { get; set; }
