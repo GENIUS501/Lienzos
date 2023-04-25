@@ -25,7 +25,6 @@ namespace AccesoDatos
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tab_Bitacora_Movimientos> Tab_Bitacora_Movimientos { get; set; }
         public virtual DbSet<Tab_Bitacora_Sesiones> Tab_Bitacora_Sesiones { get; set; }
         public virtual DbSet<Tab_Clientes> Tab_Clientes { get; set; }

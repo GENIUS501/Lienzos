@@ -25,6 +25,7 @@ namespace AccesoDatos
         public string Descripcion { get; set; }
         public int ID_Tipo_Producto { get; set; }
         public decimal Precio { get; set; }
+        public int Cantidad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tab_Venta_detallada> Tab_Venta_detallada { get; set; }

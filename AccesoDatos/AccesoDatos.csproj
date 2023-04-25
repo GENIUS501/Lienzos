@@ -61,6 +61,7 @@
     <Compile Include="DRoles.cs" />
     <Compile Include="DTipo_Producto.cs" />
     <Compile Include="DUsuarios.cs" />
+    <Compile Include="DVentas.cs" />
     <Compile Include="Lienzos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,9 +78,6 @@
       <DependentUpon>Lienzos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Lienzos.tt</DependentUpon>
-    </Compile>
     <Compile Include="Tab_Bitacora_Movimientos.cs">
       <DependentUpon>Lienzos.tt</DependentUpon>
     </Compile>
@@ -112,29 +110,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="Lienzos.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Lienzos.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="Lienzos.edmx.diagram">
       <DependentUpon>Lienzos.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Lienzos.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Lienzos.Context.cs</LastGenOutput>
-      <DependentUpon>Lienzos.edmx</DependentUpon>
-    </Content>
-    <Content Include="Lienzos.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Lienzos.edmx</DependentUpon>
-      <LastGenOutput>Lienzos.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -144,6 +128,18 @@
       <Project>{90B928AA-766E-4675-8898-C287300240B5}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lienzos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Lienzos.edmx</DependentUpon>
+      <LastGenOutput>Lienzos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Lienzos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Lienzos.edmx</DependentUpon>
+      <LastGenOutput>Lienzos.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

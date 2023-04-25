@@ -4,13 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e46ed4e029a2460ea78d0486f472e461" Name="Diagram1">
-        <EntityTypeShape EntityType="LienzosModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="f51581a4e5bb4a4fa22d3a551779521f" Name="Diagram1">
         <EntityTypeShape EntityType="LienzosModel.Tab_Bitacora_Movimientos" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="LienzosModel.Tab_Bitacora_Sesiones" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LienzosModel.Tab_Clientes" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LienzosModel.Tab_Permisos" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LienzosModel.Tab_Productos" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LienzosModel.Tab_Productos" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="LienzosModel.Tab_Roles" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="LienzosModel.Tab_Tipo_Productos" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LienzosModel.Tab_Usuarios" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
