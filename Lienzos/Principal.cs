@@ -194,5 +194,21 @@ namespace Lienzos
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Usuarios_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListarUsuarios frm = new ListarUsuarios();
+                frm.Usuario = UsuarioLogueado.ID_Usuario;
+                frm.Id_Rol = UsuarioLogueado.Id_Rol;
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -177,6 +177,7 @@
             this.Usuarios.Name = "Usuarios";
             this.Usuarios.Size = new System.Drawing.Size(227, 22);
             this.Usuarios.Text = "Usuarios";
+            this.Usuarios.Click += new System.EventHandler(this.Usuarios_Click);
             // 
             // Roles
             // 
