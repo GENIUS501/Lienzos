@@ -75,7 +75,14 @@ namespace Lienzos
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Mantenimiento_Roles_Load(object sender, EventArgs e)
