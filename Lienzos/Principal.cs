@@ -178,5 +178,21 @@ namespace Lienzos
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Roles_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListaRolesyPermisos showRols = new ListaRolesyPermisos();
+                showRols.Usuario = UsuarioLogueado.ID_Usuario;
+                showRols.Id_Rol = UsuarioLogueado.Id_Rol;
+                showRols.MdiParent = this;
+                showRols.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

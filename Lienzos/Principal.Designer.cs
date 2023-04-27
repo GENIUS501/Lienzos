@@ -183,6 +183,7 @@
             this.Roles.Name = "Roles";
             this.Roles.Size = new System.Drawing.Size(227, 22);
             this.Roles.Text = "Roles";
+            this.Roles.Click += new System.EventHandler(this.Roles_Click);
             // 
             // Bitacora_Ingresos
             // 
