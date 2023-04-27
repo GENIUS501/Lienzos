@@ -42,6 +42,9 @@ namespace Lienzos
                         Obj.Identificacion = this.txt_cedula.Text;
                         Obj.Nombre_Usuario = this.txt_user.Text;
                         Obj.Nombre = this.txt_nombre.Text;
+                        Obj.Primer_Apellido = this.txt_apellido1.Text;
+                        Obj.Segundo_Apellido = this.txt_apellido2.Text;
+                        Obj.Genero = int.Parse(this.cbo_Genero.SelectedValue.ToString());
                         Obj.Id_Rol = int.Parse(this.cbo_rol.SelectedValue.ToString());
                         //Obj.Correo = this.txt_correo.Text;
                         Obj.Nombre = this.txt_nombre.Text;
@@ -118,6 +121,14 @@ namespace Lienzos
                 }
                 );
                 this.cbo_rol.DataSource = RolesDataSource.ToArray();
+                this.cbo_Genero.DisplayMember = "Text";
+                this.cbo_Genero.ValueMember = "Value";
+                List<dynamic> Generos = new List<dynamic> {
+                new { Text = "Femenino", Value = 0 },
+                new { Text = "Masculino", Value = 1 }
+            };
+                var GenerosArray = Generos.Select(x => new { x.Text, x.Value }).ToArray();
+                this.cbo_Genero.DataSource = GenerosArray;
                 if (Accion == "M" || Accion == "C")
                 {
                     this.txt_cclave.Visible = false;
@@ -143,6 +154,9 @@ namespace Lienzos
             Obj = Negocios.Mostrar().Where(x => x.ID_Usuario == Id).FirstOrDefault();
             this.txt_cedula.Text = Obj.Identificacion.ToString();
             this.txt_nombre.Text = Obj.Nombre;
+            this.txt_apellido1.Text = Obj.Primer_Apellido;
+            this.txt_apellido2.Text = Obj.Segundo_Apellido;
+            this.cbo_Genero.SelectedValue= Obj.Genero;
             //this.txt_correo.Text = Obj.c;
             this.txt_clave.Text = "********";
             this.txt_user.Text = Obj.Nombre_Usuario;
