@@ -283,6 +283,7 @@
             this.chb_Tipo_Producto.TabIndex = 6;
             this.chb_Tipo_Producto.Text = "Tipo producto";
             this.chb_Tipo_Producto.UseVisualStyleBackColor = true;
+            this.chb_Tipo_Producto.CheckedChanged += new System.EventHandler(this.chb_Tipo_Producto_CheckedChanged);
             // 
             // chb_productos
             // 
@@ -293,6 +294,7 @@
             this.chb_productos.TabIndex = 6;
             this.chb_productos.Text = "Productos";
             this.chb_productos.UseVisualStyleBackColor = true;
+            this.chb_productos.CheckedChanged += new System.EventHandler(this.chb_Productos_CheckedChanged);
             // 
             // chb_clientes
             // 
@@ -303,6 +305,7 @@
             this.chb_clientes.TabIndex = 4;
             this.chb_clientes.Text = "Clientes";
             this.chb_clientes.UseVisualStyleBackColor = true;
+            this.chb_clientes.CheckedChanged += new System.EventHandler(this.chb_Clientes_CheckedChanged);
             // 
             // chb_usuarios
             // 
@@ -313,6 +316,7 @@
             this.chb_usuarios.TabIndex = 3;
             this.chb_usuarios.Text = "Usuarios";
             this.chb_usuarios.UseVisualStyleBackColor = true;
+            this.chb_usuarios.CheckedChanged += new System.EventHandler(this.chb_usuarios_CheckedChanged);
             // 
             // chb_rol
             // 
@@ -323,6 +327,7 @@
             this.chb_rol.TabIndex = 2;
             this.chb_rol.Text = "Roles";
             this.chb_rol.UseVisualStyleBackColor = true;
+            this.chb_rol.CheckedChanged += new System.EventHandler(this.chb_rol_CheckedChanged);
             // 
             // grp_Tipo_Producto
             // 
