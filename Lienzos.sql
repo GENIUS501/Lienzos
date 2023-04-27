@@ -85,3 +85,30 @@ CREATE TABLE Tab_Bitacora_Movimientos(
    Id_Usuario INT,
    CONSTRAINT Fk_MOVIMIENTOS_USUARIOS FOREIGN KEY(Id_Usuario) REFERENCES Tab_Usuarios(Id_Usuario)
 );
+
+INSERT INTO Tab_Roles(Nombre_Rol,Descripcion)VALUES('Administrador','Administrador')
+
+INSERT INTO Tab_Permisos (Modulo, Accion, Id_Rol) VALUES
+('Roles', 'Roles', 1),
+('Roles', 'Agregar', 1),
+('Roles', 'Modificar', 1),
+('Roles', 'Eliminar', 1),
+('Roles', 'Consultar', 1),
+('Usuarios', 'Usuarios', 1),
+('Usuarios', 'Agregar', 1),
+('Usuarios', 'Modificar', 1),
+('Usuarios', 'Eliminar', 1),
+('Usuarios', 'Consultar', 1),
+('Clientes', 'Clientes', 1),
+('Clientes', 'Agregar', 1),
+('Clientes', 'Modificar', 1),
+('Clientes', 'Eliminar', 1),
+('Clientes', 'Consultar', 1),
+('Productos', 'Estudiantes', 1),
+('Productos', 'Agregar', 1),
+('Productos', 'Modificar', 1),
+('Productos', 'Eliminar', 1),
+('Productos', 'Consultar', 1)
+
+INSERT INTO Tab_Usuarios (Identificacion,Nombre,Primer_Apellido,Segundo_Apellido, Nombre_Usuario, Contrasena,Genero,Id_Rol, Estado)
+VALUES ('123456789', 'Maria','Cruz','Rodriguez', 'Administrador1', 'HVEvEz0I1wRgOshEmHhas82xZwI=', 1,1,1)
