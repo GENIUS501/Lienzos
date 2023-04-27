@@ -210,5 +210,17 @@ namespace Lienzos
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                Cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

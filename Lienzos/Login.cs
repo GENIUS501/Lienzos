@@ -41,7 +41,7 @@ namespace Lienzos
                         Principal form = new Principal();
                         form.Idsession = Id_Session;
                         form.UsuarioLogueado = Usu;
-                        MessageBox.Show("Bienvenido: " + Usu.ID_Usuario, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Bienvenido: " + Usu.Nombre_Usuario, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         form.Show();
                     }
                     else
